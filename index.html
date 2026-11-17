@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Winter Clothing Collection &amp; Distribution Programme 2027 — Bangladesh Scouts, Gopalganj District Rover</title>
+<style>
+  :root{--navy:#0E3A5C;--dark:#07243B;--ice:#9FC7E0;--ice-lt:#DEEDF6;
+        --ember:#C75B1E;--ember-lt:#E8A268;--paper:#FBFDFE;--ink:#1C2B38;--mute:#4F6373}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);line-height:1.7;
+       font-family:"Baskerville","Libre Baskerville",Georgia,"Times New Roman",serif}
+  header{background:var(--navy);color:#fff;padding:24px 18px;text-align:center;
+         border-bottom:4px solid var(--ember)}
+  header .org{font-size:.9rem;letter-spacing:.22em;text-transform:uppercase}
+  header h1{margin:.5rem 0 .3rem;font-size:1.3rem;line-height:1.45}
+  header .meta{font-size:.92rem;color:var(--ice)}
+  main{max-width:880px;margin:0 auto;padding:20px 16px 56px}
+  section{margin:28px 0}
+  h2{font-size:1.05rem;color:var(--navy);letter-spacing:.06em;text-transform:uppercase;
+     border-left:5px solid var(--ember);padding:4px 0 4px 12px;margin:0 0 12px}
+  table{width:100%;border-collapse:collapse;font-size:.95rem;background:#fff}
+  th,td{border:1px solid #d7e4ee;padding:9px 12px;text-align:left;vertical-align:top}
+  th{background:var(--ice-lt);color:var(--dark);white-space:nowrap}
+  thead th{background:var(--navy);color:#fff}
+  .card{background:#fff;border:1px solid var(--ice);border-top:4px solid var(--navy);
+        border-radius:6px;padding:18px 20px}
+  .card h3{margin:0 0 10px;color:var(--dark);font-size:1.3rem}
+  .pill{display:inline-block;background:var(--ice-lt);color:var(--navy);border-radius:999px;
+        padding:3px 13px;font-size:.82rem;margin-right:7px}
+  .pending{color:var(--mute);font-style:italic}
+  .ok{color:var(--navy);margin:14px 0 0}
+  footer{text-align:center;font-size:.85rem;color:var(--mute);padding:18px;
+         border-top:1px solid var(--ice);letter-spacing:.08em}
+  a{color:var(--navy)}
+  @media(max-width:520px){th,td{padding:7px 9px;font-size:.9rem}}
+</style>
+</head>
+<body>
+<header>
+  <div class="org">Bangladesh Scouts</div>
+  <div class="org">Gopalganj District Rover</div>
+  <h1>Winter Clothing Collection &amp; Distribution Programme 2027</h1>
+  <div class="meta">Friday, 01 January 2027 · unit-based, across Gopalganj district</div>
+</header>
+
+<main>
+  <section id="participant">
+    <h2>Participant Details</h2>
+    <div class="card" id="pcard"><span class="pending">Scan the QR code printed on a
+      certificate to see that participant's details here.</span></div>
+  </section>
+
+  <section>
+    <h2>Programme Information</h2>
+    <table id="prog"></table>
+  </section>
+
+  <section>
+    <h2>Programme Officials</h2>
+    <table id="staff"></table>
+  </section>
+
+  <section>
+    <h2>How the Programme Runs</h2>
+    <table id="sched"></table>
+  </section>
+
+  <section>
+    <h2>Contact and Verification</h2>
+    <div class="card">
+      To verify a certificate, contact the District Secretary, Bangladesh Scouts,
+      Gopalganj District Rover — mobile 01717314690,
+      e-mail <a href="mailto:gopalganjdistrictrover@gmail.com">gopalganjdistrictrover@gmail.com</a>.
+    </div>
+  </section>
+</main>
+
+<footer>Bangladesh Scouts, Gopalganj District Rover · Be Prepared to Serve</footer>
+
+<script>
+// ---------------------------------------------------------------------
+// All content is held in the four blocks below. Entries marked "………" are
+// to be filled in when the district office supplies them.
+// ---------------------------------------------------------------------
+const PROGRAMME = [
+  ["Programme", "Winter Clothing Collection & Distribution Programme 2027 (unit-based)"],
+  ["Organised by", "Bangladesh Scouts, Gopalganj District Rover"],
+  ["Carried out by", "The rover scout units of Gopalganj District Rover"],
+  ["Date", "Friday, 01 January 2027 (day-long)"],
+  ["Place", "The locality around each participating unit"],
+  ["Participants", "Rovers, Girl-in-Rovers and Unit Leaders of the district's units"],
+  ["Beneficiaries", "Distressed and under-privileged people of the community"],
+  ["Sources of clothing", "Collection by the rover scouts themselves, the rover unit fund, and help from citizens, well-wishers and institutions"],
+  ["Circular", "District Rover memo no. 662(131)/2026, dated 17 November 2026"],
+  ["Reporting", "Activity information and photographs submitted online by 15 January 2027"],
+  ["Recognition", "Certificate from the district rover, and recommendation for the National Service Award"]
+];
+
+const STAFF = [
+  ["District Commissioner", "Professor Masud Ahmed, ALT", "Bangladesh Scouts Gopalganj District Rover"],
+  ["District Secretary", "Md. Zubair Al Mahmud, ALT", "Bangladesh Scouts Gopalganj District Rover"],
+  ["Programme Coordinator", "Sakib Husain Hredoy", "Assistant Commissioner (Community Development & Health), Gopalganj District Rover"]
+];
+
+const SCHEDULE = [
+  ["Before 01 January 2027", "Each unit collects winter clothing through its own arrangements, the unit fund and help from citizens, well-wishers and institutions"],
+  ["01 January 2027", "Units distribute the clothing among distressed and under-privileged people in their own locality, in scout uniform"],
+  ["By 15 January 2027", "Each participant submits the activity information and photographs through the district's online form"],
+  ["After verification", "The district rover issues this certificate and recommends the participant for the National Service Award"]
+];
+
+// Certificate number -> participant (filled automatically from the roster)
+const PARTICIPANTS = {
+  "001": {"name":"Md. Rakib Hasan",
+          "unit":"Gopalganj Govt. College Rover Scout Group",
+          "post":"Rover", "bsid":"………", "date":"01 January 2027",
+          "place":"………", "items":"………"}
+};
+
+function rows(tbl, data, head){
+  const t = document.getElementById(tbl);
+  let h = head ? "<thead><tr>" + head.map(c => "<th>"+c+"</th>").join("") + "</tr></thead>" : "";
+  h += "<tbody>" + data.map(r =>
+        "<tr>" + r.map((c,i) => (i===0 && !head ? "<th>"+c+"</th>" : "<td>"+c+"</td>")).join("") +
+        "</tr>").join("") + "</tbody>";
+  t.innerHTML = h;
+}
+rows("prog", PROGRAMME);
+rows("staff", STAFF, ["Role", "Name", "Designation"]);
+rows("sched", SCHEDULE, ["Stage", "What happens"]);
+
+const cert = (location.hash.match(/C=([^&]+)/) || [])[1];
+if (cert) {
+  const p = PARTICIPANTS[decodeURIComponent(cert)];
+  const box = document.getElementById("pcard");
+  box.innerHTML = p
+    ? "<h3>" + p["name"] + "</h3>" +
+      "<div><span class='pill'>Certificate No. " + cert + "/WCD/2027</span>" +
+      "<span class='pill'>" + p["post"] + "</span></div>" +
+      "<table style='margin-top:14px'><tbody>" +
+      "<tr><th>Rover Scout Group</th><td>" + p["unit"] + "</td></tr>" +
+      "<tr><th>Bangladesh Scouts ID</th><td>" + p["bsid"] + "</td></tr>" +
+      "<tr><th>Date of activity</th><td>" + p["date"] + "</td></tr>" +
+      "<tr><th>Place of distribution</th><td>" + p["place"] + "</td></tr>" +
+      "<tr><th>Winter garments distributed</th><td>" + p["items"] + "</td></tr>" +
+      "<tr><th>Award</th><td>Certificate of Participation, Winter Clothing " +
+      "Collection &amp; Distribution Programme 2027</td></tr>" +
+      "</tbody></table>" +
+      "<p class='ok'>&#10004; This certificate is recorded with Bangladesh Scouts, " +
+      "Gopalganj District Rover.</p>"
+    : "<span class='pending'>Certificate No. " + cert + " was not found in the record. " +
+      "Please contact the district office for verification.</span>";
+}
+</script>
+</body>
+</html>
